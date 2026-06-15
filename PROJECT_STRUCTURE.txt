@@ -1,0 +1,394 @@
+================================================================================
+                        PROJECT FILE STRUCTURE
+                        EduLearn Website
+================================================================================
+
+/vercel/share/v0-project/
+│
+├── 📄 Documentation Files (START HERE)
+│   ├── README.md                    ← Complete project overview
+│   ├── QUICK_START.md               ← 5-minute setup guide
+│   ├── CUSTOMIZATION.md             ← Detailed customization guide
+│   ├── BUILD_SUMMARY.md             ← Technical implementation details
+│   ├── PAGE_STRUCTURE.md            ← Section-by-section breakdown
+│   ├── DELIVERY_SUMMARY.txt         ← Project completion summary
+│   └── PROJECT_STRUCTURE.txt        ← This file
+│
+├── 📁 app/ (Next.js App Directory)
+│   ├── layout.tsx                   ← Root layout with fonts/metadata
+│   ├── page.tsx                     ← Main page (components integration)
+│   ├── globals.css                  ← Design tokens, colors, spacing
+│   ├── favicon.ico
+│   └── opengraph-image files
+│
+├── 📁 components/ (Reusable Components)
+│   ├── 🎯 Page Components
+│   │   ├── navbar.tsx               ← Sticky navigation
+│   │   ├── hero.tsx                 ← Full-screen hero section
+│   │   ├── trust-strip.tsx          ← Statistics/credibility section
+│   │   ├── offerings.tsx            ← 3-program cards
+│   │   ├── newsletter-form.tsx      ← Lead capture form (3 fields)
+│   │   ├── footer.tsx               ← Footer with 4 columns
+│   │   └── whatsapp-button.tsx      ← Fixed WhatsApp contact button
+│   │
+│   ├── 🛠️ Utility Components
+│   │   └── optimized-image.tsx      ← Lazy-loaded image component
+│   │
+│   └── 📚 UI Components
+│       └── ui/button.tsx            ← Button component (shadcn)
+│
+├── 📁 public/ (Static Assets)
+│   ├── 📁 images/
+│   │   ├── founding-cohort.png          ← Program image 1
+│   │   ├── professional-bootcamp.png    ← Program image 2
+│   │   └── masterclass-series.png       ← Program image 3
+│   │
+│   ├── favicon.ico
+│   ├── apple-icon.png
+│   └── icon.svg
+│
+├── 📁 .next/ (Build Output - Auto-generated)
+│   └── (Compiled Next.js project)
+│
+├── 📁 node_modules/ (Dependencies - Auto-generated)
+│   └── (All npm packages)
+│
+├── ⚙️ Configuration Files
+│   ├── next.config.mjs               ← Next.js configuration
+│   ├── tsconfig.json                 ← TypeScript configuration
+│   ├── package.json                  ← Dependencies and scripts
+│   ├── pnpm-lock.yaml               ← Dependency lock file
+│   └── postcss.config.mjs            ← PostCSS configuration
+│
+├── 🔧 Development Files
+│   ├── .gitignore                    ← Git ignore rules
+│   ├── components.json               ← shadcn config
+│   └── .eslintrc.json               ← ESLint configuration
+│
+└── 📝 Project Files
+    └── package.json
+
+
+================================================================================
+KEY FILES TO MODIFY
+================================================================================
+
+CUSTOMIZATION PRIORITY
+
+1️⃣ URGENT (First 5 minutes)
+   └── components/offerings.tsx        Change program names & descriptions
+   └── components/whatsapp-button.tsx  Set your WhatsApp number
+
+2️⃣ IMPORTANT (Next 10 minutes)
+   └── components/footer.tsx           Update company info
+   └── components/navbar.tsx           Update company name
+   └── app/layout.tsx                  Update meta tags
+
+3️⃣ OPTIONAL (Nice to have)
+   └── app/globals.css                 Customize colors
+   └── components/hero.tsx             Change headlines
+   └── components/trust-strip.tsx      Update metrics
+
+
+================================================================================
+FILE SIZE OVERVIEW
+================================================================================
+
+Components
+  navbar.tsx                          ~94 lines
+  hero.tsx                           ~40 lines
+  trust-strip.tsx                    ~42 lines
+  offerings.tsx                      ~105 lines
+  newsletter-form.tsx                ~145 lines
+  whatsapp-button.tsx                ~58 lines
+  footer.tsx                         ~86 lines
+  optimized-image.tsx                ~72 lines
+
+Configuration
+  app/layout.tsx                     ~60 lines
+  app/page.tsx                       ~20 lines
+  globals.css                        ~100 lines
+  next.config.mjs                    ~15 lines
+
+Total Component Code: ~700 lines
+Total Config Code: ~200 lines
+Total Documentation: ~1,500+ lines
+
+
+================================================================================
+DEPENDENCIES
+================================================================================
+
+CORE FRAMEWORKS
+  - next@16.2.6
+  - react@19.2.4
+  - react-dom@19.2.4
+
+STYLING
+  - tailwindcss@4.0
+  - postcss
+  - autoprefixer
+
+FONTS (via Google Fonts)
+  - Cormorant Garamond (700 weight)
+  - Inter (400, 500 weights)
+
+UTILITIES
+  - typescript
+  - @types/react
+  - @types/node
+
+Optional (not yet installed):
+  - React Query / SWR (for data fetching)
+  - Framer Motion (for animations)
+  - Zod (for form validation)
+
+
+================================================================================
+BUILD & DEPLOYMENT
+================================================================================
+
+LOCAL DEVELOPMENT
+  pnpm install              # Install dependencies
+  pnpm dev                  # Run dev server (http://localhost:3000)
+  pnpm build                # Build for production
+  pnpm start                # Start production server
+
+DEPLOYMENT
+  Vercel (Recommended)
+    1. Push to GitHub
+    2. Connect repo to Vercel
+    3. Auto-deploys on push
+    4. Auto image optimization
+    5. Free tier available
+
+  Other Platforms
+    1. pnpm build
+    2. Deploy .next folder
+    3. Requires Node.js 18+
+
+
+================================================================================
+RESPONSIVE BREAKPOINTS
+================================================================================
+
+TAILWIND BREAKPOINTS (Used throughout)
+  sm:  640px+   (tablet)
+  md:  768px+   (medium tablet)
+  lg:  1024px+  (desktop)
+  xl:  1280px+  (large desktop)
+
+CUSTOM VIEWPORT TESTING
+  375px   (Mobile - Galaxy S20)
+  640px   (Tablet)
+  1024px+ (Desktop)
+
+
+================================================================================
+COLOR SYSTEM LOCATION
+================================================================================
+
+All colors defined in: app/globals.css
+
+Light Mode (:root)
+  --background: #fdfaf3         (cream)
+  --foreground: #1a3a52         (navy)
+  --primary: #1a3a52            (navy)
+  --accent: #c19a6b             (gold)
+  --secondary: #f5ede1          (light cream)
+  --border: #e8dcc8
+  --muted: #e8dcc8
+
+Dark Mode (.dark)
+  Custom dark theme included
+
+
+================================================================================
+FONT SYSTEM LOCATION
+================================================================================
+
+Font imports: app/layout.tsx
+Font variables: app/globals.css
+
+Heading Font
+  Name: Cormorant Garamond
+  Weight: 700 only
+  Use: .font-heading class
+
+Body Font
+  Name: Inter
+  Weights: 400, 500
+  Use: .font-sans class
+
+Both fonts loaded with display=swap for performance
+
+
+================================================================================
+QUICK NAVIGATION
+================================================================================
+
+To find something...
+
+Change program names?
+  → components/offerings.tsx (line ~10)
+
+Change WhatsApp number?
+  → components/whatsapp-button.tsx (line ~10)
+
+Change colors?
+  → app/globals.css (search ":root")
+
+Change hero headline?
+  → components/hero.tsx (line ~8)
+
+Change footer info?
+  → components/footer.tsx (line ~5)
+
+Change navigation?
+  → components/navbar.tsx (line ~40)
+
+Change meta tags?
+  → app/layout.tsx (line ~20)
+
+Change form fields?
+  → components/newsletter-form.tsx (line ~60)
+
+Add new component?
+  → Create in components/ directory
+
+
+================================================================================
+PERFORMANCE METRICS LOCATIONS
+================================================================================
+
+Image Optimization
+  Config: next.config.mjs
+  Component: components/optimized-image.tsx
+  Usage: Lazy loading with Intersection Observer
+
+Font Optimization
+  Config: app/layout.tsx (display=swap)
+  Sizes: globals.css
+
+Build Optimization
+  Config: next.config.mjs (compress, productionBrowserSourceMaps)
+
+Performance Hints
+  Config: app/layout.tsx (preconnect, dns-prefetch)
+
+
+================================================================================
+ACCESSIBILITY FEATURES
+================================================================================
+
+Implemented in Components
+  - Semantic HTML (header, nav, main, footer, section)
+  - ARIA labels on interactive elements
+  - sr-only class for screen reader text
+  - Keyboard navigation support
+  - Proper heading hierarchy
+  - Form labels with htmlFor attributes
+  - Focus indicators on buttons
+  - Color contrast compliance
+
+
+================================================================================
+DOCUMENTATION READING ORDER
+================================================================================
+
+For Quick Launch (5 minutes)
+  1. QUICK_START.md - Setup essentials
+  2. Get site running locally
+  3. Deploy to Vercel
+
+For Understanding (30 minutes)
+  1. README.md - Project overview
+  2. DELIVERY_SUMMARY.txt - What was built
+  3. PAGE_STRUCTURE.md - Component breakdown
+
+For Deep Customization (1-2 hours)
+  1. CUSTOMIZATION.md - Detailed guides
+  2. BUILD_SUMMARY.md - Technical details
+  3. Review individual component files
+
+For Deployment (15 minutes)
+  1. README.md (Deployment section)
+  2. Follow Vercel instructions
+  3. Test live site
+
+
+================================================================================
+WHAT'S READY, WHAT'S NOT
+================================================================================
+
+✅ READY TO LAUNCH
+  • All components built
+  • Responsive design complete
+  • Mobile optimized
+  • Performance optimized
+  • Documentation complete
+  • Form validation working
+  • WhatsApp integration ready
+  • Newsletter form structure ready
+  • SEO metadata set
+  • Accessibility verified
+
+⏳ NEEDS CUSTOMIZATION (Not Breaking)
+  • Program names
+  • Company information
+  • WhatsApp number
+  • Colors (optional)
+  • Meta tags (optional)
+  • Trust metrics (optional)
+
+❌ NOT INCLUDED (Optional Add-ons)
+  • Backend database
+  • User authentication
+  • Payment processing
+  • Email sending
+  • Chat functionality
+  • User profiles
+  • (Can be added as separate features)
+
+
+================================================================================
+NEXT STEPS CHECKLIST
+================================================================================
+
+□ Read README.md (5 min)
+□ Run pnpm dev locally (2 min)
+□ Update program names (3 min)
+□ Set WhatsApp number (1 min)
+□ Update company info (2 min)
+□ Test on mobile (5 min)
+□ Deploy to Vercel (5 min)
+□ Test live site (5 min)
+□ Share with team/stakeholders (time varies)
+
+Total time to launch: ~30 minutes
+
+
+================================================================================
+SUPPORT & HELP
+================================================================================
+
+For questions, check:
+  • README.md - General overview
+  • QUICK_START.md - Fast setup help
+  • CUSTOMIZATION.md - How to change things
+  • BUILD_SUMMARY.md - Technical questions
+  • PAGE_STRUCTURE.md - Component details
+  • Individual component files (comments included)
+
+Common issues:
+  • Fonts not loading? → Check preconnect in layout.tsx
+  • WhatsApp not working? → Verify phone format
+  • Form not submitting? → Check validation rules
+  • Images not showing? → Verify public/images/ paths
+
+
+================================================================================
+End of Project Structure Guide
+Created: June 10, 2026
+Status: Complete & Ready to Launch
+================================================================================
